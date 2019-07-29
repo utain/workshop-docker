@@ -3,7 +3,7 @@ version: "3.5"
 services:
   api:
     container_name: todo-api
-    build: ../todo-service
+    build: ../todo-api
     ports:
       - 8080:8080
     environment:
