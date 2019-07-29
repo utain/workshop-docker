@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  frontend:
+    container_name: todo-fe
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    ports: 
+      - 3000:3000
+      - 35729:35729
+    environment: 
+      - REACT_VERSION=10
+      - API_URL=http://192.168.1.101:8080/api
+    volumes: 
+      - ./:/app/
