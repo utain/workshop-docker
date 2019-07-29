@@ -1,8 +1,8 @@
 FROM node:10.11-alpine
 ENV CI=true
 WORKDIR /app
-ADD yarn.lock /app/yarn.lock
-ADD package.json /app/package.json
+ADD ./yarn.lock /app/yarn.lock
+ADD ./package.json /app/package.json
 ENV API_URL=http://localhost:8080/api
 RUN yarn
 ADD . /app
