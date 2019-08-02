@@ -5,12 +5,12 @@ networks:
 services:
   api:
     container_name: todo-api
-    image: utainwp/todo-api:latest
+    image: utainwp/todo-api
     networks: 
       - todo-network
   web:
     container_name: todo-web
-    image: utainwp/todo-web:latest
+    image: utainwp/todo-web
     ports: 
       - 80:80
       - 443:443
