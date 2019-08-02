@@ -1,0 +1,25 @@
+version: "3.5"
+
+services:
+  api:
+    container_name: todo-api-go
+    build: ./todo-api
+    image: todo-api-go
+    ports:
+      - 8080:8080
+    environment:
+      - DB_URL=postgres_connection_url
+  web:
+    container_name: todo-fe
+    build: ./todo-webapp
+    image: todo-webapp
+    ports: 
+      - 80:80
+      - 443:443
+    environment: 
+      - CI=true
+      - REACT_VERSION=10
+    volumes: 
+      - ./:/app/
+    links: 
+      - api

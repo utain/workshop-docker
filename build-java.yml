@@ -3,7 +3,7 @@ version: "3.5"
 services:
   api:
     container_name: todo-api-java
-    build: ./todo-api
+    build: ./todo-api-java
     image: todo-api-java
     ports:
       - 8080:8080
